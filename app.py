@@ -1,4 +1,4 @@
-from fastapi import FastAPI,Path
+from fastapi import FastAPI,Path,Q
 import json
 app = FastAPI()
 
@@ -26,5 +26,9 @@ def view(patient_id:str = Path (..., description="Id of patient for example P001
     data = load_data()
 
     return data[patient_id]
+
+@app.get("/sort")
+def sort(sort_by:str=Query(...,description="sort "),order:str=Query('asc')):
+
 
     
