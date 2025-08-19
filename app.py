@@ -27,8 +27,7 @@ def view(patient_id:str = Path (..., description="Id of patient for example P001
 
     return data[patient_id]
 
-@app.get("/sort")
-def sort(sort_by:str=Query(...,description="sort "),order:str=Query('asc')):
+
 
 
     
